@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/rcano/Development/DAAND/workspace/drm-agent-core-trunk/multidrm/inc'
+let g:netrw_dirhist_2='/home/rcano/Development/workspace/drm-agent-core/build/android/ndk'
+let g:netrw_dirhist_3='/home/rcano/.vim'
+let g:netrw_dirhist_4='/home/rcano/.vim/syntax'
+let g:netrw_dirhist_5='/home/rcano/.vim'
+let g:netrw_dirhist_6='/home/rcano/.vim/colors'
+let g:netrw_dirhist_7='/home/rcano/.vim'

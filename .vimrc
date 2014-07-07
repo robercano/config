@@ -7,7 +7,12 @@ set mouse=a
 "
 " VIM color theme
 "
-color elflord
+" color rober
+"
+" Using EasyColour
+"
+set background=dark " Change to light if you want the light variant
+colorscheme desert_thl " Change to your preferred colour scheme
 
 "
 " C indenting and formating
@@ -17,7 +22,8 @@ set sw=4
 set noexpandtab
 set number
 set numberwidth=4
-let c_space_errors=1 
+set hls
+"let c_space_errors=1 
 
 "
 " Folding support
@@ -34,7 +40,7 @@ function MyFoldText()
 endfunction
 set foldmarker=#if,#endif
 set foldmethod=marker
-au BufWinLeave * silent mkview
+"au BufWinLeave * silent mkview
 "au BufWinEnter * silent loadview
 
 "
@@ -58,6 +64,13 @@ let Tlist_Ctags_Cmd='ctags'
 " map q ^[0i/*^[$a*/
 " Delete a comment (in line).
 " map g ^[0xx^[$xx 
+
+" Search in files
+set grepprg=ack-grep\ --cpp\ --cc\ --perl\ --python\ --make
+nmap <F4> :grep <C-R>=expand("<cword>")<CR><CR>
+map <F7> :botright cwindow<CR>
+map <F5> :cprev<CR>
+map <F6> :cnext<CR>
 
 "
 " Filetype plugins support
