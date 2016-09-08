@@ -1,12 +1,17 @@
 "
 " Mouse support
 "
-set mouse=a
+set mouse=r
 
 "
 " VIM color theme
 "
 color rober
+
+"
+" Pathogen
+"
+execute pathogen#infect()
 
 "
 " Using EasyColour
@@ -20,6 +25,7 @@ color rober
 set ts=4
 set sw=4
 "set noexpandtab
+set expandtab
 set number
 set numberwidth=4
 set hls
@@ -29,10 +35,10 @@ set fileformats=unix,dos
 set modeline
 
 "
-" 80 column highlight
+" 100 column highlight
 "
-" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-" match OverLength /\%81v.\+/
+"highlight OverLength ctermbg=yellow ctermfg=white guibg=#592929
+"match OverLength /\%101v.\+/
 
 "
 " Folding support
@@ -72,11 +78,11 @@ set foldmethod=marker
 "
 " TagBar plugin
 "
-map <F8> :TagbarToggle<CR>
-au VimEnter *.c TagbarToggle
-au VimEnter *.h TagbarToggle
-au VimEnter *.cc TagbarToggle
-au VimEnter *.cpp TagbarToggle
+"map <F8> :TagbarToggle<CR>
+"au VimEnter *.c TagbarToggle
+"au VimEnter *.h TagbarToggle
+"au VimEnter *.cc TagbarToggle
+"au VimEnter *.cpp TagbarToggle
 
 "
 " C Scope
@@ -108,6 +114,17 @@ map <F6> :cnext<CR>
 map <F7> :botright cwindow<CR>
 
 "
+" GLSL
+"
+au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
+
+"
 " Filetype plugins support
 "
 filetype plugin indent on
+
+"
+" Markdown folding off and enable spell checking
+"
+let g:vim_markdown_folding_disabled = 1
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_gb
