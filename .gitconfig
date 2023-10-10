@@ -1,0 +1,11 @@
+[user]
+	email = 3525807+robercano@users.noreply.github.com
+	name = Roberto Cano
+[credential]
+	helper = store
+[alias]
+	co = "!git checkout"
+	show-merged-branches = "!git branch -v | awk '$3 == \"[gone]\" { print $1  }'"
+	delete-merged-branches = "!git branch -v | awk '$3 == \"[gone]\" { print $1  }' | xargs git branch -D"
+	show-others-branches = "!f() { if [ \"$1\" = \"\" ]; then git branch -v | grep -Ev '^  rc/|^* rc/|^  robertocano/|^* robertocano/|^  master|^* master|^  main|^* main|^  dev|^* dev'; else git branch -v | grep -Ev \"^  rc/|^* rc/|^  robertocano/|^* robertocano/|^  master|^* master|^  main|^* main|^  dev|^* dev|^  $1/|^* $1/\"; fi }; f"
+	delete-others-branches = "!f() { if [ \"$1\" = \"\" ]; then git branch -v | grep -Ev '^  rc/|^* rc/|^  robertocano/|^* robertocano/|^  master|^* master|^  main|^* main|^  dev|^* dev' | awk '{ print $1}' | xargs git branch -D; else git branch -v | grep -Ev \"^  rc/|^* rc/|^  robertocano/|^* robertocano/|^  master|^* master|^  main|^* main|^  dev|^* dev|^  $1/|^* $1/\" | awk '{ print $1 }' | xargs git branch -D; fi }; f"
